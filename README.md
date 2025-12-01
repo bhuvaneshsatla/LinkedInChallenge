@@ -1,6 +1,6 @@
-# Solutions to Mr. Raj Madhuram's #6weeksto2026 LinkedIn Challenges
+# My solutions to Mr. Raj Madhuram's #6weeksto2026 LinkedIn Challenges
 
-Try them out yourself :)
+Try them out yourself below :)
 
 Challenge #1: https://www.linkedin.com/feed/update/urn:li:activity:7397599538242498560/?originTrackingId=1UMO4%2BpqoApS%2FBj8Iz1%2BUw%3D%3D
 
