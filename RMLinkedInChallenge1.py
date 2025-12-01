@@ -15,46 +15,53 @@ num = [
     [0, 59, 59, 7, 94, 17, 75, 65, 11, 34, 43, 66, 86, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-]
+] #given marix with 0 as border to prevent back-indexing
 
 side = len(num)
-count = 0
-pos = []
-product = []
+count = 0 #counts number of 2026s found
+pos = [] #stores index position of the 2026s
+product = [] #stores product of numbers around the 2026s
 
 for i in range(side):
     for j in range(side):
 
+        #checks if number below 20 is 26
         if num[i][j] == 20:
             if num[i + 1][j] == 26:
                 pos.append([i - 1, j - 1])
                 count += 1
                 prod = 1
 
+                #for loop to find product of all numbers around 2026 including 20 and 26
                 for x in range(i - 1, i + 3):
                     for y in range(j - 1, j + 2):
 
                         if num[x][y] != 0:
                             prod *= num[x][y]
 
-                product.append((prod / (20 * 26)))
+                product.append((prod / (20 * 26))) #dividing by 20 * 26 as it was included in the above product calculation
 
+        #checks if number to the right of 20 is 26
         if num[i][j] == 20:
             if num[i][j + 1] == 26:
                 pos.append([i - 1, j - 1])
                 count += 1
                 prod = 1
+
+                #for loop to find product of all numbers around 2026 including 20 and 26
                 for x in range(i - 1, i + 2):
                     for y in range(j - 1, j + 3):
 
                         if num[x][y] != 0:
                             prod *= num[x][y]
 
-                product.append((prod / (20 * 26)))
+                product.append((prod / (20 * 26))) #dividing by 20 * 26 as it was included in the above product calculation
 
 print("2026 found at:\n")
 
+#prints position of every 2026 found
 for i in range(count):
     print("position: " + str(pos[i]) + ", product: " + str(product[i]) + "\n")
 
+#prints the maximum product of numbers around 2026
 print("maximum product: " + str(max(product)))
